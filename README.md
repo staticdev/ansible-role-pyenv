@@ -28,9 +28,9 @@ Here is the list of all variables and their default values:
 - `pyenvrc_path: "{{ pyenv_path }}"`
 - `pyenv_owner: "{{ ansible_facts.user_id }}"`
 - `pyenv_owner_group: "{{ pyenv_owner }}"`
-- `pyenv_python_versions: [3.11.4]`
-- `pyenv_virtualenvs: [{ venv_name: latest, py_version: 3.11.4 }]`
-- `pyenv_global: [3.11.4]`
+- `pyenv_python_versions: [3.12.1]`
+- `pyenv_virtualenvs: [{ venv_name: latest, py_version: 3.12.1 }]`
+- `pyenv_global: [3.12.1]`
 - `pyenv_update_git_install: true` (get latest pyenv from git)
 - `pyenv_enable_autocompletion: false`
 - `pyenv_enable_virtualenvs: true`
@@ -68,25 +68,28 @@ None.
   roles:
     - role: staticdev.pyenv
       vars:
-        pyenv_version: "v2.3.9"
-        pyenv_virtualenv_version: "v1.1.5"
-        pyenv_update_version: "810db78"
+        # from https://github.com/pyenv/pyenv/releases
+        pyenv_version: "v2.3.35"
+        # from https://github.com/pyenv/pyenv-virtualenv/releases
+        pyenv_virtualenv_version: "v1.2.1"
+        # from https://github.com/pyenv/pyenv-update/commits/master/
+        pyenv_update_version: "172a0ed"
         pyenv_shellrc_file: "{{ ansible_env.HOME }}/.shrc"
         pyenv_path: "{{ ansible_env.HOME }}/.pyenv"
         pyenvrc_path: "{{ ansible_env.HOME }}"
         pyenv_owner: "{{ instance_owner }}"
         pyenv_global:
-          - 3.11.4
-          - 3.10.12
+          - 3.12.1
+          - 3.11.7
         pyenv_enable_autocompletion: false
         pyenv_python_versions:
-          - 3.11.4
-          - 3.10.12
+          - 3.12.1
+          - 3.11.7
         pyenv_virtualenvs:
+          - venv_name: latest_v312
+            py_version: 3.12.1
           - venv_name: latest_v311
-            py_version: 3.11.4
-          - venv_name: latest_v310
-            py_version: 3.10.12
+            py_version: 3.11.7
         pyenv_make_opts: "-j4"
         pyenv_python_configure_opts: "--enable-optimizations --with-lto --with-ensurepip=upgrade"
         pyenv_python_cflags: "-march=native -mtune=native"

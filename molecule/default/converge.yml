@@ -8,6 +8,6 @@
       ansible.builtin.include_role:
         name: "staticdev.pyenv"
       vars:
-        pyenv_version: "v2.3.20"
+        pyenv_version: "v2.3.35"
         pyenv_virtualenv_version: "v1.2.1"
-        pyenv_update_version: "38ac747"
+        pyenv_update_version: "172a0ed"
