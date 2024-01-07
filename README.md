@@ -68,9 +68,12 @@ None.
   roles:
     - role: staticdev.pyenv
       vars:
-        pyenv_version: "v2.3.9"
-        pyenv_virtualenv_version: "v1.1.5"
-        pyenv_update_version: "810db78"
+        # from https://github.com/pyenv/pyenv/releases
+        pyenv_version: "v2.3.35"
+        # from https://github.com/pyenv/pyenv-virtualenv/releases
+        pyenv_virtualenv_version: "v1.2.1"
+        # from https://github.com/pyenv/pyenv-update/commits/master/
+        pyenv_update_version: "172a0ed"
         pyenv_shellrc_file: "{{ ansible_env.HOME }}/.shrc"
         pyenv_path: "{{ ansible_env.HOME }}/.pyenv"
         pyenvrc_path: "{{ ansible_env.HOME }}"
