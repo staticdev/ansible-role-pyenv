@@ -59,6 +59,8 @@ export MAKE_INSTALL_OPTS="{{ pyenv_make_install_opts }}"
 {% if pyenv_profile_task is defined %}
 export PROFILE_TASK="{{ pyenv_profile_task }}"
 {% endif %}
+{% if pyenv_custom_pyenvrc_file is defined %}
 [ -f "{{ pyenvrc_path }}/.pyenvrc.custom" ] && source "{{ pyenvrc_path }}/.pyenvrc.custom"
+{% endif %}
 eval "$(pyenv init --path)"
 eval "$(pyenv init - {{ pyenv_init_options }})"
