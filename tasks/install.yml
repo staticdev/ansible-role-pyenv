@@ -5,6 +5,7 @@
     dest: "{{ pyenv_path }}"
     version: "{{ pyenv_version }}"
     update: "{{ pyenv_update_git_install }}"
+    force: true
 
 - name: Install PyEnv-virtualenv plugin
   ansible.builtin.git:
@@ -12,6 +13,7 @@
     dest: "{{ pyenv_path }}/plugins/pyenv-virtualenv"
     version: "{{ pyenv_virtualenv_version }}"
     update: "{{ pyenv_update_git_install }}"
+    force: true
   when: pyenv_enable_virtualenvs
 
 - name: Install PyEnv-update plugin
@@ -20,6 +22,7 @@
     dest: "{{ pyenv_path }}/plugins/pyenv-update"
     version: "{{ pyenv_update_version }}"
     update: "{{ pyenv_update_git_install }}"
+    force: true
   when: pyenv_update
 
 - name: Install .pyenvrc
