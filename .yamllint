@@ -7,10 +7,16 @@ rules:
     level: warning
   braces:
     level: warning
+    max-spaces-inside: 1
   document-start:
     level: error
+  comments-indentation: false
   comments:
     level: error
+    min-spaces-from-content: 1
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
   truthy:
     level: error
 
