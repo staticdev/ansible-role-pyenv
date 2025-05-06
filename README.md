@@ -4,6 +4,8 @@
 
 [tests]: https://github.com/staticdev/ansible-galaxy-pyenv/actions?workflow=Tests
 
+**DEPRECATED: this project is not maintained anymore in favor direct installation with [nix package manager](https://nixos.wiki/wiki/Nix_package_manager) and [Nixpkgs](https://github.com/NixOS/nixpkgs).**
+
 Ansible Galaxy role for [pyenv] on Debian / Ubuntu / RedHat / OSX.
 
 Install it with the following command:
